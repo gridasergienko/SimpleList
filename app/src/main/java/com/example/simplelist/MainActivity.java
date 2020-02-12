@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (savedInstanceState == null) {
             Fragment parentFragment = new PeopleFragment();
-            parentFragment.setRetainInstance(false);
+            parentFragment.setRetainInstance(false); // FIXME usually we set such flag inside fragment in onCreate method. And I haven't seen the variant with flag that is set to true.
 
             getSupportFragmentManager()
                     .beginTransaction()
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.parent, fragment)
-                    .addToBackStack(null)
+                    .addToBackStack(null) // TODO try to add several fragments to stack and then recreate activity. All the fragments should save their states.
                     .commit();
         });
     }

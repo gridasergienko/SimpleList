@@ -54,6 +54,8 @@ public class PeopleFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_people, container, false);
     }
 
+    // FIXME We are not using onActivityCreated for initialyzing view inside fragment.
+    // Please consider onCreateView or onViewCreated for such perposes.
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
